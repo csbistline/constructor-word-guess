@@ -5,10 +5,10 @@ var Letter = function(character) {
     this.guessed = false;
     this.toString = function() {
         if (this.guessed) {
-            return this.character;
+            return this.character + " ";
         } else {
-            return "_";
-        }
+            return "_ ";
+        };
     };
     this.isGuessed = function(char){
         if (this.character === char) {
@@ -17,15 +17,9 @@ var Letter = function(character) {
         } 
         else {
             return false;
-        }
+        };
     };
 };
-
-// var myLetter = new Letter("a");
-// console.log(myLetter);
-// console.log(myLetter + "");
-// myLetter.guessed = true;
-// console.log(myLetter + "");
 
 // Export Letter constructor
 module.exports = Letter;
