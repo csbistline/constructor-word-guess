@@ -31,6 +31,7 @@ var constructWord = function (str) {
 
 // read list of words from file, create array
 var readWords = function () {
+    // reset guesses
     guessesLeft = maxGuess;
     fs.readFile("wordlist.txt", "utf8", function (error, data) {
         if (error) {
@@ -78,6 +79,7 @@ var inquire = function () {
     })
 };
 
+// checks win/loss conditions, restarts game if over
 var checkWinLoss = function () {
     var counter = 0;
     var arr = wordToGuess.wordToGuess;
@@ -111,6 +113,8 @@ var checkWinLoss = function () {
     }
 };
 
-// initialize game
+// ==================================
+// INITIALIZATION 
+// ==================================
 readWords();
 
